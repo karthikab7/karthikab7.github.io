@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img"
+     aria-label="Original diagram: sunlight captured by an optical light guide, optimised by AI, producing an energy and data feedback loop">
+  <defs>
+    <linearGradient id="lg-sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd66b"/><stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="lg-guide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#4aa8ff"/>
+    </linearGradient>
+    <filter id="lg-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <!-- sun -->
+  <g transform="translate(70 80)">
+    <circle r="34" fill="url(#lg-sun)" filter="url(#lg-glow)"/>
+    <g stroke="#ffd66b" stroke-width="3" stroke-linecap="round">
+      <line x1="0" y1="-48" x2="0" y2="-40"/><line x1="34" y1="-34" x2="40" y2="-40"/>
+      <line x1="48" y1="0" x2="40" y2="0"/><line x1="-34" y1="-34" x2="-40" y2="-40"/>
+    </g>
+  </g>
+  <!-- sun rays into guide -->
+  <g stroke="#ffd66b" stroke-width="2" opacity="0.7">
+    <line x1="110" y1="92" x2="210" y2="150"/><line x1="112" y1="104" x2="210" y2="168"/><line x1="108" y1="116" x2="210" y2="186"/>
+  </g>
+  <!-- light guide (textured optical bar) -->
+  <g transform="translate(210 150)">
+    <rect width="190" height="44" rx="8" fill="none" stroke="url(#lg-guide)" stroke-width="3"/>
+    <path d="M0 44 l12 -12 l12 12 l12 -12 l12 12 l12 -12 l12 12 l12 -12 l12 12 l12 -12 l12 12 l12 -12 l12 12 l12 -12 l12 12"
+          fill="none" stroke="#4aa8ff" stroke-width="2" opacity="0.8"/>
+    <text x="95" y="26" text-anchor="middle" fill="#e8ecf4" font-family="Inter,sans-serif" font-size="13">Light guide</text>
+  </g>
+  <!-- AI optimiser node -->
+  <g transform="translate(470 172)">
+    <circle r="40" fill="none" stroke="#2ee6c5" stroke-width="2"/>
+    <circle r="6" cx="-14" cy="-10" fill="#2ee6c5"/><circle r="6" cx="14" cy="-10" fill="#2ee6c5"/>
+    <circle r="6" cx="0" cy="14" fill="#9b8cff"/>
+    <line x1="-14" y1="-10" x2="0" y2="14" stroke="#2ee6c5" stroke-width="1.5"/>
+    <line x1="14" y1="-10" x2="0" y2="14" stroke="#2ee6c5" stroke-width="1.5"/>
+    <line x1="-14" y1="-10" x2="14" y2="-10" stroke="#2ee6c5" stroke-width="1.5"/>
+    <text x="0" y="62" text-anchor="middle" fill="#aab3c5" font-family="Inter,sans-serif" font-size="12">AI optimisation</text>
+  </g>
+  <line x1="400" y1="172" x2="430" y2="172" stroke="#4aa8ff" stroke-width="2" stroke-dasharray="5 4"/>
+  <!-- energy + data feedback loop -->
+  <path d="M470 212 q -200 70 -260 -40" fill="none" stroke="#ffb347" stroke-width="2" stroke-dasharray="6 6" opacity="0.7"/>
+  <text x="300" y="300" text-anchor="middle" fill="#7c879c" font-family="Inter,sans-serif" font-size="12">energy &amp; data feedback loop</text>
+</svg>

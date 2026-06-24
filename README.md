@@ -26,9 +26,15 @@ README.md  CREDITS.md  robots.txt  sitemap.xml
 assets/
   css/styles.css
   js/main.js
-  img/{astro,data,icons}/
+  img/{astro,data,solar,icons}/   (original SVG art + one public patent figure)
   docs/   (CV PDF — only a public, contact-redacted version)
 ```
+
+## Visual design
+Layered cosmic background, glass panels, glowing accents, scroll-progress bar, section reveals, an
+accessible interactive "research constellation" (astro), and a data-to-insight flow (data). All motion
+respects `prefers-reduced-motion`. Imagery is original SVG/CSS plus one public-record patent figure —
+see `CREDITS.md`.
 
 ## Content provenance
 All factual content (education, research, publications, experience, patents, skills) is drawn from the
