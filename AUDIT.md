@@ -204,3 +204,21 @@ stronger dust lane. It now reads as an edge-on host galaxy with a bipolar outflo
 * All 55 reveal elements resolve on a full scroll-through at 1024×768.
 * Console: 0 errors, 0 warnings. All six new arXiv links return 200.
 * JSON-LD: 2 blocks, both valid. One `<h1>` per page, no heading skips, all anchors resolve.
+
+## Hero: real Chandra imagery (authorised 2026-08-29)
+
+Replaced the original SVG with a genuine **Chandra X-ray image of Centaurus A**
+(https://chandra.si.edu/photo/2014/cena/, credit *X-ray: NASA/CXC/U.Birmingham/M.Burke et al.*).
+Chose the X-ray-only frame over a multiwavelength composite deliberately: a composite carries a
+compound credit with several rights-holders, whereas this one is pure NASA/SAO material under the
+Chandra image-use policy ("no claim to copyright is being asserted"). It is also the better
+scientific fit — it shows the jet, the inner lobes and the compact source population, which is the
+subject of the Centaurus A census project.
+
+Served as three widths in WebP and JPEG (864/640/440; 40 KB at the largest WebP, down from a
+551 KB source), EXIF stripped, `srcset`/`sizes` for responsive delivery, preloaded with
+`fetchpriority="high"`. The image is masked with a radial feather so no frame edge reads as a seam
+and the headline never sits on bright pixels; at ≤980 px it drops to 20% opacity behind the text.
+A visible credit sits under the hero copy and states plainly that it is **not the author's own
+data**; the alt text describes the astrophysical content. `cena-lobes.svg` is retained for the
+404 page.

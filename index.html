@@ -32,7 +32,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preload" as="image" href="assets/img/astro/cena-lobes.svg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/astro/cena-chandra-864.webp"
+        imagesrcset="assets/img/astro/cena-chandra-440.webp 440w, assets/img/astro/cena-chandra-640.webp 640w, assets/img/astro/cena-chandra-864.webp 864w"
+        imagesizes="(max-width: 980px) 100vw, 58vw" type="image/webp" fetchpriority="high" />
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -96,9 +98,21 @@
 
     <!-- ============================ HERO ============================ -->
     <section class="hero" id="top">
-      <div class="hero__bg" aria-hidden="true">
-        <img class="hero__art spin-slow" src="assets/img/astro/cena-lobes.svg" alt="" width="820" height="820" fetchpriority="high" decoding="async" />
-        <div class="hero__veil"></div>
+      <div class="hero__bg">
+        <picture>
+          <source type="image/webp" sizes="(max-width: 980px) 100vw, 58vw"
+                  srcset="assets/img/astro/cena-chandra-440.webp 440w,
+                          assets/img/astro/cena-chandra-640.webp 640w,
+                          assets/img/astro/cena-chandra-864.webp 864w" />
+          <img class="hero__art" src="assets/img/astro/cena-chandra-864.jpg"
+               sizes="(max-width: 980px) 100vw, 58vw"
+               srcset="assets/img/astro/cena-chandra-440.jpg 440w,
+                       assets/img/astro/cena-chandra-640.jpg 640w,
+                       assets/img/astro/cena-chandra-864.jpg 864w"
+               width="864" height="864" fetchpriority="high" decoding="async"
+               alt="Chandra X-ray image of the galaxy Centaurus A: a bright nucleus with a jet extending to the upper left, inner lobe shells, and hundreds of compact X-ray point sources across the field." />
+        </picture>
+        <div class="hero__veil" aria-hidden="true"></div>
       </div>
       <div class="wrap">
         <div class="hero__inner">
@@ -115,6 +129,9 @@
             <a class="btn btn--ghost" href="assets/Karthik_Balasubramaniam_CV.pdf" download>Download CV</a>
             <a class="btn btn--quiet" href="#contact">Contact</a>
           </div>
+          <p class="hero__credit reveal">Background: Centaurus A in X-rays.
+            Credit <a href="https://chandra.si.edu/photo/2014/cena/" target="_blank" rel="noopener">NASA/CXC/U.&nbsp;Birmingham/M.&nbsp;Burke et al.</a>
+            — public NASA/SAO image, not the author's own data.</p>
         </div>
       </div>
     </section>

@@ -16,8 +16,27 @@ All astronomy and diagram graphics on this site are **original SVG/CSS**, drawn 
   marks. `og.png` is a raster of `og.svg` (most social platforms do not render SVG preview cards).
 - Inline SVG icons and the data-flow diagram in `data.html`.
 
-**No NASA, ESA, CXC or other observatory imagery is used anywhere on this site**, so nothing can
-be mistaken for the author's own data.
+The SVG hero was replaced by a real Chandra image in August 2026 (below); `cena-lobes.svg` is
+still used on the 404 page.
+
+## Observatory imagery (public record)
+
+- `assets/img/astro/cena-chandra-{440,640,864}.{jpg,webp}` — the homepage hero.
+  - **Source:** NASA/Chandra X-ray Observatory Photo Album, *Centaurus A*, 6 February 2014 —
+    https://chandra.si.edu/photo/2014/cena/ (downloaded from `cena.jpg`, 864×864, 551 KB;
+    re-encoded to three widths in JPEG and WebP, EXIF stripped).
+  - **Credit line, as published:** *X-ray: NASA/CXC/U.Birmingham/M.Burke et al.*
+  - **Status:** NASA/SAO material. The Chandra image-use policy states that "no claim to copyright
+    is being asserted and the material may be used in accordance with NASA guidelines", and
+    requests appropriate acknowledgement. This is an **X-ray-only** image — it carries no
+    third-party optical or radio layer, so no additional rights-holder is involved.
+  - **Attribution shown on page:** a visible credit under the hero copy, linking to the Chandra
+    page, and stating explicitly that it is *"not the author's own data"*.
+  - **Alt text** describes the astrophysical content (nucleus, jet, inner lobes, point sources).
+
+⚠️ If this image is ever swapped for a Centaurus A *composite*, the credit becomes compound
+(e.g. X-ray: NASA/CXC; optical: ESO; submillimetre: MPIfR/ESO/APEX) and every rights-holder must
+be named. Do not shorten a compound credit line.
 
 ## Patent figure (public record)
 
