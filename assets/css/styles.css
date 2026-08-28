@@ -141,7 +141,9 @@ section { padding-block: clamp(3.4rem, 7vw, 6.5rem); position: relative; }
 
 .nav__toggle {
   display: none; background: none; border: 1px solid var(--line);
-  border-radius: 9px; color: var(--ink); padding: .4rem .6rem; font-size: 1.05rem; cursor: pointer;
+  border-radius: 9px; color: var(--ink); font-size: 1.05rem; cursor: pointer;
+  /* 44px comfortable touch target */
+  min-width: 44px; min-height: 44px; padding: 0; line-height: 1;
 }
 @media (max-width: 900px) {
   .nav__toggle { display: block; }
@@ -166,7 +168,10 @@ section { padding-block: clamp(3.4rem, 7vw, 6.5rem); position: relative; }
 .btn--primary:hover { color: #05070f; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(123,140,255,0.34); }
 .btn--ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
 .btn--ghost:hover { border-color: var(--accent-2); color: var(--ink); background: var(--surface-2); }
-.btn--sm { padding: .5rem 1rem; font-size: .84rem; }
+.btn--sm { padding: .55rem 1.05rem; font-size: .84rem; min-height: 40px; }
+/* tertiary action: present but visually subordinate to the three primary CTAs */
+.btn--quiet { color: var(--ink-dim); border-color: transparent; background: none; padding-inline: .9rem; }
+.btn--quiet:hover { color: var(--ink); border-color: var(--line); background: var(--surface); }
 
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: center; overflow: hidden; padding-block: clamp(4rem, 10vw, 7rem); }
@@ -247,6 +252,7 @@ section { padding-block: clamp(3.4rem, 7vw, 6.5rem); position: relative; }
 .status--published { background: rgba(79,210,230,0.14); color: var(--accent-2); border: 1px solid rgba(79,210,230,0.32); }
 .status--collab    { background: rgba(123,140,255,0.16); color: #a8b3ff; border: 1px solid rgba(123,140,255,0.34); }
 .status--proposal  { background: var(--surface-2); color: var(--ink-faint); border: 1px solid var(--line); }
+.status--active    { background: rgba(79,210,230,0.14); color: var(--accent-2); border: 1px solid rgba(79,210,230,0.32); }
 
 /* ---------- currently working on ---------- */
 .now { border-left: 2px solid var(--accent); padding-left: 1.6rem; margin: 0; list-style: none; display: grid; gap: 1.05rem; }
@@ -284,8 +290,9 @@ section { padding-block: clamp(3.4rem, 7vw, 6.5rem); position: relative; }
 .tag-author--first { background: rgba(123,140,255,0.2); color: #c3cbff; }
 .tag-author--co    { background: var(--surface-2); color: var(--ink-faint); border: 1px solid var(--line); }
 .doi-btn {
-  font-size: .76rem; padding: .22rem .7rem; border: 1px solid var(--line);
-  border-radius: 999px; color: var(--ink-dim); margin-top: .55rem; display: inline-block;
+  font-size: .76rem; padding: .45rem .9rem; border: 1px solid var(--line);
+  border-radius: 999px; color: var(--ink-dim); margin-top: .6rem;
+  display: inline-flex; align-items: center; min-height: 36px;
 }
 .doi-btn:hover { border-color: var(--accent-2); color: var(--ink); }
 .pub-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.4rem; }

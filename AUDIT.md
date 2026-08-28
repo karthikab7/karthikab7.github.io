@@ -75,3 +75,66 @@ normally. Verified with Chrome's `--disable-javascript`.
   above the WCAG AA 4.5:1 threshold.
 * Rendered and checked at 390 px, 820 px, 1280 px and 1440 px.
 * Total repository under 1 MB; no frameworks, no trackers, no build step.
+
+---
+
+# Second review — 2026-08-28 (same day)
+
+## The brief described the pre-redesign site
+
+The review brief quoted the homepage as saying *"From black holes to intelligent systems"*,
+*"Two paths, one curiosity"*, *"Path 01 / Path 02"*, *"A non-linear path"*, *"Working across
+systems and scales"* and *"interdisciplinary researcher and scientist-builder"*. **None of those
+strings exists on the deployed site** — all were removed in the first redesign and the removal is
+live. Verified by fetching `https://karthikab7.github.io/` with cache-busting and grepping for
+each phrase: 0 matches, 8 for 8. The hero serves *"X-ray astrophysics of black holes & AGN"*.
+The brief was written against a cached copy; sections 1, 3, 5, 7, 10, 12–14 and 17 of it were
+already satisfied and were **not** rebuilt.
+
+## What the second pass actually changed
+
+* Hero: research statement tightened to one sentence; secondary **Contact** button added
+  (`.btn--quiet`, visually subordinate to the three primary actions).
+* Research area 01 gains "accretion geometry"; area 04 keys now name reproducible pipelines
+  and HPC.
+* Centaurus A project status **In preparation → Ongoing** (the "draft with co-authors" detail
+  stays in the body text, so nothing is overstated).
+* New homepage section **Computation, Data & Innovation**, placed *after* the career timeline
+  and *before* About — deliberately downstream of all astrophysics content. Three cards:
+  scientific Python & pipelines, statistical inference, and engineering & optics (the three
+  granted patents). Links through to `data.html`.
+* Toolkit gains **Astropy** (listed in the CV, previously missing).
+* Timeline heading → "From engineering to astrophysics".
+* About fact list gains **doctoral funding** — the Karnataka Overseas Fellowship and Polish NCN
+  grant 2016/22/E/ST9/00061, with Ł. Stawarz named as the grant's PI so nothing implies Karthik
+  held it.
+* Meta description replaced with the wording supplied in the brief.
+* **Touch targets:** hamburger 34px → **44×44**; DOI buttons 29px → **36px**; small buttons
+  → 40px minimum.
+
+## Requested but not implemented, on evidence
+
+* **PyTorch** (asked for twice, in sections 8 and 9). Searched the public CV: PyTorch, Torch and
+  TensorFlow all absent; the CV evidences scikit-learn and statistical modelling. The brief's own
+  section 9 says "only show skills supported by the repository/CV" and section 18 forbids
+  inventing software expertise, so it stays out until confirmed. **One line to add if you use it.**
+* **Monte Carlo methods** — the CV says MCMC, so the toolkit says "MCMC / Bayesian".
+* **Research Statement button** — no such file exists in the repository.
+* **Per-paper arXiv links** — no arXiv identifiers are recorded for these papers; DOIs are, and
+  are used. ADS is reachable by ORCID search rather than an invented per-paper URL.
+* **Naming FAPESP** on the AGN-feedback card — it is a pending application; the card describes the
+  science without naming a funder.
+
+## Second-pass verification
+
+* Widths 375 / 390 / 768 / 1024 / 1440: **no horizontal overflow** at any width
+  (`scrollWidth == clientWidth`).
+* Mobile nav driven for real: opens, `aria-expanded` flips, Escape closes it and returns focus to
+  the toggle, a link click closes it.
+* All 55 scroll-reveal elements resolve to visible on a normal scroll-through; none can strand.
+* Console: 0 errors, 0 warnings.
+* One `<h1>` per page, no heading-level skips, every image has `alt`, all internal anchors resolve,
+  no unclosed tags.
+* Body copy runs ~63 characters per line (median), h1 57.6px at 1440px.
+* Two webfonts only — Sora (display) and Inter (body). A system monospace stack is used for small
+  technical labels and downloads nothing extra.
