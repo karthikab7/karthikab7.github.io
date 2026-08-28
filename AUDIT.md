@@ -138,3 +138,69 @@ already satisfied and were **not** rebuilt.
 * Body copy runs ~63 characters per line (median), h1 57.6px at 1440px.
 * Two webfonts only — Sora (display) and Inter (body). A system monospace stack is used for small
   technical labels and downloads nothing extra.
+
+---
+
+# Third pass — 2026-08-29: closing the evidence gaps
+
+## arXiv identifiers, verified not guessed
+
+Resolved each publication's DOI through the open Semantic Scholar graph API, then **confirmed
+every returned identifier by fetching the arXiv abstract page and matching the title**. Six of the
+nine works have arXiv preprints; all six now carry a direct link beside the DOI. The three without
+(both IAU proceedings and the JAI instrumentation paper) correctly have none.
+
+| Paper | arXiv |
+|---|---|
+| NGC 3894 (ApJ 922, 84) | 2106.13193 |
+| CGCG 292−057 (ApJ 905, 148) | 2006.03717 |
+| Bronzini+ (A&A 684, A65) | 2401.16479 |
+| Pictor A eastern lobe (ApJ 921, 44) | 2103.11928 |
+| Pictor A western hotspot (ApJ 903, 109) | 2005.10350 |
+| 4C+74.26 (ApJ 866, 132) | 1805.06957 |
+
+Semantic Scholar independently returned **2018** for both IAU proceedings, corroborating the
+correction made in the first pass against the ORCID record.
+
+## The CV citation figure — fixed at source
+
+The downloadable CV claimed "**60+ citations**". The verified figure is **48, h-index 4**
+(Crossref via ORCID, Aug 2026). Traced the PDF to its source,
+`academic_applications/READY_TO_SEND/CVs/Karthik_overleafCV_public.tex`, corrected both
+occurrences, rebuilt with pdfLaTeX (3 pp, 0 errors) and reinstalled it on the site. The profile
+paragraph now carries no count at all (it goes stale); the publications line states
+"48 citations, h-index 4 (Crossref via ORCID, Aug 2026)" with its provenance.
+
+⚠️ The **master** `Karthik_overleafCV.tex` and `Research_Summary.tex` still say "60+". They feed
+other applications and were left alone — that is a CV task, not a website one.
+
+## Structured data
+
+Added an `ItemList` of nine `ScholarlyArticle` entries — title, full author list, journal, volume,
+page, year, DOI and arXiv — alongside the existing `Person` block. Both validate as JSON.
+
+## Icons, theme and performance
+
+`apple-touch-icon.png` (180×180) and `favicon-32.png` added — iOS ignores SVG favicons, so the
+home-screen icon was previously blank. `theme-color` set. Hero SVG preloaded with
+`fetchpriority="high"`.
+
+**One optimisation was tried and reverted:** quantising the 1200×630 Open Graph card to a
+256-colour palette cut it 360 KB → 130 KB but produced visible banding in the glow around the
+nucleus. The card is fetched once by a scraper, never in the page render path, so the size saving
+was worth nothing and the quality loss was real. Restored to full colour, losslessly optimised
+(295 KB).
+
+## Hero art, second iteration
+
+The first version read as two concentric circles. Redrawn: lobes elongated along the jet axis and
+brighter on their inner edge, contours nested and slightly offset rather than perfectly concentric,
+a faint fractal-noise texture inside each lobe so they do not look like flat vector shapes, and a
+stronger dust lane. It now reads as an edge-on host galaxy with a bipolar outflow.
+
+## Third-pass verification
+
+* 375 / 390 / 768 / 1024 / 1440: no horizontal overflow.
+* All 55 reveal elements resolve on a full scroll-through at 1024×768.
+* Console: 0 errors, 0 warnings. All six new arXiv links return 200.
+* JSON-LD: 2 blocks, both valid. One `<h1>` per page, no heading skips, all anchors resolve.
