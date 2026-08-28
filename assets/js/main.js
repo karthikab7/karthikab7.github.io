@@ -1,11 +1,13 @@
 /* ============================================================
-   main.js — vanilla, dependency-free.
-   nav · scroll-progress · scroll-reveal · starfield · constellation
+   main.js — vanilla, dependency-free, no build step.
+   mobile nav · scroll progress · scroll reveal · nav scrollspy · year
    All motion respects prefers-reduced-motion.
    ============================================================ */
 (function () {
   "use strict";
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- mobile nav ---- */
   var toggle = document.querySelector(".nav__toggle");
@@ -15,8 +17,19 @@
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
     });
-    links.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { links.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); });
+    Array.prototype.forEach.call(links.querySelectorAll("a"), function (a) {
+      a.addEventListener("click", function () {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+    // close on Escape, return focus to the toggle
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
     });
   }
 
@@ -36,57 +49,40 @@
   var reveals = document.querySelectorAll(".reveal");
   if (reveals.length) {
     if (reduceMotion || !("IntersectionObserver" in window)) {
-      reveals.forEach(function (el) { el.classList.add("visible"); });
+      Array.prototype.forEach.call(reveals, function (el) { el.classList.add("visible"); });
     } else {
       var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
-      }, { threshold: 0.12 });
-      reveals.forEach(function (el) { io.observe(el); });
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+      Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
     }
   }
 
-  /* ---- canvas starfield (decorative; skipped under reduced-motion) ---- */
-  var canvas = document.getElementById("starfield");
-  if (canvas && !reduceMotion) {
-    var ctx = canvas.getContext("2d");
-    var stars = [], w, h, raf;
-    function size() {
-      w = canvas.width = canvas.offsetWidth * devicePixelRatio;
-      h = canvas.height = canvas.offsetHeight * devicePixelRatio;
-      var count = Math.min(180, Math.floor((w * h) / 24000));
-      stars = [];
-      for (var i = 0; i < count; i++) {
-        stars.push({ x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.5*devicePixelRatio+0.3,
-          a: Math.random()*0.6+0.2, tw: Math.random()*0.02+0.004, vx: (Math.random()-0.5)*0.05*devicePixelRatio,
-          c: Math.random() > 0.85 ? "#ffd9a1" : (Math.random() > 0.6 ? "#bcd0ff" : "#cfe4ff") });
-      }
-    }
-    function draw() {
-      ctx.clearRect(0,0,w,h);
-      for (var i=0;i<stars.length;i++){ var s=stars[i];
-        s.a += s.tw; if (s.a>0.85||s.a<0.15) s.tw=-s.tw;
-        s.x += s.vx; if (s.x<0) s.x=w; if (s.x>w) s.x=0;
-        ctx.globalAlpha=s.a; ctx.fillStyle=s.c;
-        ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();
-      }
-      ctx.globalAlpha=1; raf=requestAnimationFrame(draw);
-    }
-    size(); draw();
-    var t; window.addEventListener("resize", function(){ clearTimeout(t); t=setTimeout(size,200); });
-    document.addEventListener("visibilitychange", function(){ if (document.hidden){ cancelAnimationFrame(raf);} else { draw(); } });
-  }
-
-  /* ---- research constellation: hover/focus reveals milestone ---- */
-  var info = document.getElementById("constellation-info");
-  if (info) {
-    document.querySelectorAll(".constellation .node[data-desc]").forEach(function (n) {
-      var show = function () { info.textContent = n.getAttribute("data-label") + " — " + n.getAttribute("data-desc"); };
-      n.addEventListener("mouseenter", show);
-      n.addEventListener("focus", show);
-      n.addEventListener("click", show);
-      if (!n.hasAttribute("tabindex")) n.setAttribute("tabindex", "0");
-      n.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(); } });
+  /* ---- nav scrollspy (single-page anchors only) ---- */
+  var navAnchors = links ? links.querySelectorAll('a[href^="#"]') : [];
+  if (navAnchors.length && "IntersectionObserver" in window) {
+    var map = {};
+    var sections = [];
+    Array.prototype.forEach.call(navAnchors, function (a) {
+      var id = a.getAttribute("href").slice(1);
+      var el = id && document.getElementById(id);
+      if (el) { map[id] = a; sections.push(el); }
     });
+    if (sections.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var a = map[e.target.id];
+          if (!a) return;
+          if (e.isIntersecting) {
+            Array.prototype.forEach.call(navAnchors, function (x) { x.classList.remove("is-active"); });
+            a.classList.add("is-active");
+          }
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      sections.forEach(function (s) { spy.observe(s); });
+    }
   }
 
   /* ---- footer year ---- */

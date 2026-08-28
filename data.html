@@ -3,192 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data, AI &amp; Innovation — Dr. Karthik Balasubramaniam</title>
-  <meta name="description" content="Research data scientist with a PhD in astrophysics: Python automation, statistical reasoning, reproducible pipelines, scientific software, and AI-optimised solar-light optics. Skills, projects, roles." />
+  <title>Data &amp; Computation — Karthik Balasubramaniam | X-ray Astrophysicist</title>
+  <meta name="description" content="The computational side of an X-ray astrophysicist's work: Python pipelines, statistical inference, reproducible scientific software, plus applied data-engineering experience and granted patents in AI-optimised solar optics." />
   <link rel="canonical" href="https://karthikab7.github.io/data.html" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="From scientific datasets to intelligent technical systems" />
-  <meta property="og:description" content="Transferable data-science, scientific-software, and solar-optics innovation capabilities of Dr. Karthik Balasubramaniam." />
+  <meta property="og:title" content="Data &amp; Computation — Karthik Balasubramaniam" />
+  <meta property="og:description" content="Scientific computing, statistical inference and reproducible pipelines behind the X-ray astronomy — and the applied engineering experience that reinforces them." />
   <meta property="og:url" content="https://karthikab7.github.io/data.html" />
-  <meta property="og:image" content="https://karthikab7.github.io/assets/img/icons/og.svg" />
+  <meta property="og:image" content="https://karthikab7.github.io/assets/img/icons/og.png" />
   <link rel="icon" type="image/svg+xml" href="assets/img/icons/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
+
 <body class="theme-data">
   <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav">
     <div class="wrap nav__inner">
-      <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span> Karthik&nbsp;Balasubramaniam</a>
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button>
+      <a class="brand" href="index.html" aria-label="Karthik Balasubramaniam — home">
+        <img class="brand__mark" src="assets/img/icons/favicon.svg" alt="" width="30" height="30" />
+        <span>Karthik&nbsp;Balasubramaniam
+          <span class="brand__sub">X-ray Astrophysicist</span>
+        </span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">☰</button>
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="astro.html">Astrophysics</a></li>
-        <li><a href="data.html" aria-current="page">Data &amp; AI</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#cv">CV</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav__secondary"><a href="data.html" aria-current="page">Data &amp; AI</a></li>
       </ul>
     </div>
   </header>
 
   <main id="main">
-    <!-- 1. HERO -->
-    <section class="hero">
-      <div class="hero__bg" aria-hidden="true">
-        <img class="hero__art" src="assets/img/solar/lightguide-diagram.svg" alt="" />
-        <div class="hero__veil"></div>
-      </div>
+
+    <!-- HERO -->
+    <section class="hero" style="min-height:auto;padding-block:clamp(3.5rem,8vw,5.5rem)">
       <div class="wrap">
-        <span class="hero__tag reveal">Research data scientist · scientific software · solar-AI optics</span>
-        <h1 class="reveal">Scientific thinking, data systems, and <span class="gradient-text">AI-ready problem solving</span>.</h1>
-        <p class="lead reveal">I turn complex, imperfect data into interpretable, reproducible results. A decade of PhD and
-          industry experience — from multi-terabyte X-ray astronomy datasets to large-scale metadata pipelines and
-          AI-optimised optics — taught me to combine statistical rigour with clean, automated, well-documented workflows.</p>
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary" href="#projects">See projects →</a>
-          <a class="btn btn--solar" href="#solar">Solar-AI innovation →</a>
+        <div class="hero__inner">
+          <p class="hero__tag reveal"><span class="dot" aria-hidden="true"></span> Supporting page — the research itself is on the <a href="index.html" style="color:inherit;text-decoration:underline">homepage</a></p>
+          <h1 class="hero__kicker reveal">The computation behind the <span class="gradient-text">astrophysics</span></h1>
+          <p class="hero__statement reveal">Every result on this site rests on code: multi-terabyte X-ray datasets
+            reduced with scripted pipelines, spectral models fitted under proper low-count statistics, and analyses
+            written so they can be re-run from raw data. This page collects that computational side, together with
+            the applied data- and quality-engineering roles held between research posts, and two granted patent
+            families in optical light-guide design.</p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary" href="index.html#research">Back to research</a>
+            <a class="btn btn--ghost" href="assets/Karthik_Balasubramaniam_CV.pdf" download>Download CV</a>
+          </div>
         </div>
 
-        <!-- accessible data-to-insight flow -->
         <svg class="dataflow reveal" viewBox="0 0 820 120" role="img"
-             aria-label="Pipeline: raw signals, cleaning, modelling, visualisation, research insight" style="margin-top:2.4rem;max-width:760px">
-          <line class="edge animate-dash" x1="118" y1="60" x2="190" y2="60"></line>
-          <line class="edge animate-dash" x1="318" y1="60" x2="390" y2="60"></line>
-          <line class="edge animate-dash" x1="518" y1="60" x2="590" y2="60"></line>
-          <line class="edge animate-dash" x1="690" y1="60" x2="740" y2="60"></line>
-          <g><rect class="node" x="18" y="38" width="100" height="44" rx="10"></rect><text class="lbl" x="68" y="64" text-anchor="middle">Raw signals</text></g>
-          <g><rect class="node" x="190" y="38" width="128" height="44" rx="10"></rect><text class="lbl" x="254" y="64" text-anchor="middle">Clean &amp; validate</text></g>
-          <g><rect class="node" x="390" y="38" width="128" height="44" rx="10"></rect><text class="lbl" x="454" y="64" text-anchor="middle">Model &amp; infer</text></g>
-          <g><rect class="node" x="590" y="38" width="100" height="44" rx="10"></rect><text class="lbl" x="640" y="64" text-anchor="middle">Visualise</text></g>
-          <g><rect class="node" x="740" y="38" width="62" height="44" rx="10"></rect><text class="lbl" x="771" y="64" text-anchor="middle">Insight</text></g>
+             aria-label="Analysis pipeline: raw observatory data, calibration and cleaning, modelling and inference, visualisation, published result"
+             style="margin-top:2.8rem;max-width:780px">
+          <line class="edge animate-dash" x1="128" y1="60" x2="196" y2="60"></line>
+          <line class="edge animate-dash" x1="330" y1="60" x2="398" y2="60"></line>
+          <line class="edge animate-dash" x1="530" y1="60" x2="598" y2="60"></line>
+          <line class="edge animate-dash" x1="700" y1="60" x2="748" y2="60"></line>
+          <g><rect class="node" x="14" y="38" width="114" height="44" rx="10"></rect><text class="lbl" x="71" y="65" text-anchor="middle">Raw events</text></g>
+          <g><rect class="node" x="196" y="38" width="134" height="44" rx="10"></rect><text class="lbl" x="263" y="65" text-anchor="middle">Calibrate</text></g>
+          <g><rect class="node" x="398" y="38" width="132" height="44" rx="10"></rect><text class="lbl" x="464" y="65" text-anchor="middle">Model &amp; infer</text></g>
+          <g><rect class="node" x="598" y="38" width="102" height="44" rx="10"></rect><text class="lbl" x="649" y="65" text-anchor="middle">Visualise</text></g>
+          <g><rect class="node" x="748" y="38" width="60" height="44" rx="10"></rect><text class="lbl" x="778" y="65" text-anchor="middle">Result</text></g>
         </svg>
       </div>
     </section>
 
-    <!-- 2. FEATURE: datasets to systems -->
-    <section class="wrap" id="value">
-      <p class="eyebrow reveal">Transferable strengths</p>
-      <h2 class="reveal">From scientific datasets to intelligent technical systems</h2>
-      <div class="grid grid--3" style="margin-top:1.6rem">
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M4 18 L9 8 L13 14 L20 5"/></svg></div><h3>Statistical reasoning</h3><p>Regression, classification, clustering, Bayesian inference, and time-series on real, noisy data.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M8 6 L4 12 L8 18 M16 6 L20 12 L16 18"/></svg></div><h3>Python automation</h3><p>Reproducible workflows replacing manual steps with scripted, version-controlled pipelines.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M6 4 h9 l3 3 v13 h-12 z M9 11 h6 M9 15 h6"/></svg></div><h3>Technical documentation</h3><p>Clear validation procedures, provenance, and onboarding material for analysts and stakeholders.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8 v4 l3 2"/></svg></div><h3>Experimental &amp; instrument data</h3><p>Systems thinking from instrumentation, QC/testing, and observatory data environments.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M4 12 h6 M14 12 h6 M10 8 l4 8"/></svg></div><h3>Research → product</h3><p>Translating complex analysis into interpretable, actionable technical results.</p></div>
-        <div class="card reveal"><div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2"/><circle cx="17" cy="7" r="2"/><circle cx="12" cy="16" r="2"/><path d="M9 8 L15 7 M8 9 L11 15 M16 8 L13 15"/></svg></div><h3>Interdisciplinary range</h3><p>Transferable skills across physics, astronomy, engineering, and industry data work.</p></div>
+    <!-- TRANSFERABLE STRENGTHS -->
+    <section class="wrap" id="value" aria-labelledby="value-h">
+      <p class="eyebrow reveal">Capabilities</p>
+      <h2 id="value-h" class="reveal">What the computational work involves</h2>
+      <div class="grid grid--3" style="margin-top:1.8rem">
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 L9 8 L13 14 L20 5"/></svg></div>
+          <h3>Statistical inference</h3><p>Low-count Poisson regimes, Bayesian modelling and MCMC, upper limits, and honest treatment of degeneracy and selection.</p></article>
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6 L4 12 L8 18 M16 6 L20 12 L16 18"/></svg></div>
+          <h3>Python pipelines</h3><p>Scripted, version-controlled reductions replacing manual steps — from raw observatory events to final figures.</p></article>
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4 h9 l3 3 v13 h-12 z M9 11 h6 M9 15 h6"/></svg></div>
+          <h3>Provenance &amp; documentation</h3><p>Recorded software versions, calibration files and parameters, so a result can be reproduced years later.</p></article>
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8 v4 l3 2"/></svg></div>
+          <h3>Large scientific datasets</h3><p>Multi-terabyte multi-mission archives; batch processing on Linux and cluster environments.</p></article>
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12 h6 M14 12 h6 M10 8 l4 8"/></svg></div>
+          <h3>Simulation-based validation</h3><p>Injection-and-recovery tests that measure a pipeline's own detection and measurement bias instead of assuming it away.</p></article>
+        <article class="card reveal"><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2"/><circle cx="17" cy="7" r="2"/><circle cx="12" cy="16" r="2"/><path d="M9 8 L15 7 M8 9 L11 15 M16 8 L13 15"/></svg></div>
+          <h3>Instrumentation &amp; engineering</h3><p>Optomechanical design and QC/test experience — systems thinking carried over from a mechanical-engineering first degree.</p></article>
       </div>
     </section>
 
-    <!-- 3. SOLAR-AI INNOVATION -->
-    <section class="wrap" id="solar">
-      <p class="eyebrow reveal">Solar-AI &amp; optics innovation</p>
-      <h2 class="reveal">AI-optimised solar light-guide systems</h2>
-      <div class="grid grid--2" style="margin-top:1.6rem;align-items:start">
+    <!-- PATENTS -->
+    <section class="wrap" id="patents" aria-labelledby="patents-h">
+      <p class="eyebrow reveal">Patents</p>
+      <h2 id="patents-h" class="reveal">AI-optimised solar light-guide systems</h2>
+      <div class="grid grid--2" style="margin-top:1.8rem;align-items:start">
         <div class="reveal">
-          <p>Co-inventor on granted patents applying AI/optimisation to optical light-guide systems for solar energy
-             capture — combining optical physics with data-driven design. Patent numbers (verifiable identifiers):
-             <strong>US&nbsp;11,668,926&nbsp;B2</strong>, <strong>TW&nbsp;109125878</strong>, <strong>TW&nbsp;110124889</strong>.</p>
-          <p class="muted">Patent titles vary across source documents, so numbers are shown as the authoritative reference.
-             The diagram on the home and hero panels is an original abstract illustration of the theme (sunlight →
-             light guide → AI optimisation → energy/data loop), not a confidential system schematic.</p>
-          <ul class="chips" style="margin-top:1rem"><li class="chip chip--solar">Optical physics</li><li class="chip chip--solar">Light-guiding</li><li class="chip chip--solar">AI optimisation</li><li class="chip chip--solar">Energy capture</li></ul>
+          <p>Co-inventor on granted patents applying AI and optimisation to optical light-guide systems for solar
+             energy capture, combining optical physics with data-driven design. The patent numbers are the
+             authoritative reference:</p>
+          <ul class="chips" style="margin:1.2rem 0">
+            <li class="chip chip--solar">US&nbsp;11,668,926&nbsp;B2</li>
+            <li class="chip chip--solar">TW&nbsp;109125878</li>
+            <li class="chip chip--solar">TW&nbsp;110124889</li>
+          </ul>
+          <p class="muted">Patent titles vary across source documents, so the numbers are given rather than a single
+             title. This work is engineering, not astrophysics, and is listed here rather than under research.</p>
         </div>
         <figure class="figure reveal">
-          <img src="assets/img/solar/patent-us11668926-fig1.png" loading="lazy" width="1000" height="1168"
-               alt="Figure 1 from U.S. Patent US 11,668,926 B2: a light-guide element with a textured optical surface redirecting incoming sunlight rays." />
-          <figcaption>FIG. 1 — U.S. Patent US&nbsp;11,668,926&nbsp;B2 (granted 2023). Public record; reproduced from the official patent document. See <a href="CREDITS.md">CREDITS</a>.</figcaption>
+          <img src="assets/img/solar/patent-us11668926-fig1.png" loading="lazy" decoding="async"
+               width="1000" height="1168"
+               alt="Figure 1 of U.S. Patent 11,668,926 B2: a light-guide element with a textured optical surface redirecting incoming sunlight rays." />
+          <figcaption>FIG. 1 — U.S. Patent US&nbsp;11,668,926&nbsp;B2 (granted 2023). Public record; reproduced from
+            the official patent document. See <a href="CREDITS.md">CREDITS</a>.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 4. FEATURED PROJECTS -->
-    <section class="wrap" id="projects">
-      <p class="eyebrow reveal">Featured projects</p>
-      <h2 class="reveal">Public-safe project work</h2>
-      <div class="grid grid--2" style="margin-top:1.6rem">
-        <div class="card reveal"><h3>Reproducible X-ray data pipelines <span class="tag tag--prep">Ongoing</span></h3>
-          <p>Scripted, provenance-tracked pipelines that ingest large astronomical datasets, detect and measure sources,
-             and produce reproducible statistical outputs — framed as data engineering; unpublished science excluded.</p>
-          <ul class="chips" style="margin:1rem 0 .6rem"><li class="chip">Python</li><li class="chip">NumPy/SciPy</li><li class="chip">Git</li><li class="chip">Linux</li></ul>
-          <a href="https://github.com/karthikab7/xray-astronomy-rebuild" target="_blank" rel="noopener">GitHub ↗</a> <span class="muted">(private until publication)</span></div>
-        <div class="card reveal"><h3>AI-optimised solar light-guide <span class="tag tag--co">Patented</span></h3>
-          <p>Co-inventor on patents combining AI/optimisation with optical light-guide design for solar energy capture.</p>
-          <ul class="chips" style="margin:1rem 0 .6rem"><li class="chip chip--solar">Optics</li><li class="chip chip--solar">AI design</li><li class="chip chip--solar">Energy</li></ul>
-          <span class="muted">US 11,668,926 B2 · TW 109125878 · TW 110124889</span></div>
-        <div class="card reveal"><h3>Large-scale metadata analytics <span class="tag tag--co">Industry</span></h3>
-          <p>As Senior Data Analyst (HCL Technologies, Poland, 2022) delivered metadata quality and data validation for a
-             large product-catalog project, and authored documentation that reduced data error rates.</p>
-          <ul class="chips" style="margin-top:1rem"><li class="chip">SQL</li><li class="chip">Data validation</li><li class="chip">Metadata</li></ul></div>
-        <div class="card reveal"><h3>Open profile &amp; portfolio site <span class="tag tag--prep">Live</span></h3>
-          <p>This static, dependency-free site and an open GitHub profile — built for accessibility, performance, and reproducibility.</p>
-          <ul class="chips" style="margin:1rem 0 .6rem"><li class="chip">HTML/CSS</li><li class="chip">Vanilla JS</li><li class="chip">GitHub Pages</li></ul>
-          <a href="https://github.com/karthikab7" target="_blank" rel="noopener">github.com/karthikab7 ↗</a></div>
-      </div>
-    </section>
-
-    <!-- 5. EXPERIENCE & IMPACT -->
-    <section class="wrap" id="experience">
-      <p class="eyebrow reveal">Experience &amp; impact</p>
-      <h2 class="reveal">Where I've applied this</h2>
+    <!-- EXPERIENCE -->
+    <section class="wrap" id="experience" aria-labelledby="exp-h">
+      <p class="eyebrow reveal">Applied experience</p>
+      <h2 id="exp-h" class="reveal">Roles held between research posts</h2>
+      <p class="section-lead reveal">Described qualitatively from the CV; no business metrics are claimed.</p>
       <ul class="htimeline reveal">
-        <li><p class="when">2026 →</p><p class="what">Innovation &amp; Ecosystem Associate</p><p class="where">PPyrus India — data validation &amp; metadata workflows</p></li>
-        <li><p class="when">2025–26</p><p class="what">QC / Systems Testing</p><p class="where">Wistron, Taiwan — PCB verification, structured QC data</p></li>
-        <li><p class="when">2024–25</p><p class="what">Optomechanical Eng. Intern</p><p class="where">Vacatronics — optical-filter data, Class-100 cleanroom</p></li>
-        <li><p class="when">2022</p><p class="what">Senior Data Analyst</p><p class="where">HCL Technologies, Poland — metadata analytics</p></li>
-        <li><p class="when">2016–24</p><p class="what">Doctoral &amp; postdoctoral researcher</p><p class="where">Python spectral pipelines on multi-TB X-ray data</p></li>
+        <li><p class="when">May 2026 →</p><p class="what">Innovation &amp; Ecosystem Associate</p><p class="where">Ppyrus India, Bengaluru (remote)</p></li>
+        <li><p class="when">Nov 2025 – Feb 2026</p><p class="what">Technical Assistant — QC / systems testing</p><p class="where">Wistron, Hsinchu, Taiwan</p></li>
+        <li><p class="when">Mar 2024 – May 2025</p><p class="what">Optomechanical Engineer Intern</p><p class="where">Vacatronics — optical-filter data, cleanroom</p></li>
+        <li><p class="when">Jan – May 2022</p><p class="what">Senior Data Analyst</p><p class="where">HCL Technologies, Poland — metadata quality &amp; validation</p></li>
+        <li><p class="when">2016 – 2023</p><p class="what">Doctoral &amp; postdoctoral researcher</p><p class="where">Python spectral pipelines on multi-terabyte X-ray data</p></li>
       </ul>
-      <p class="muted reveal" style="margin-top:1rem">Outcomes described qualitatively from verified CV experience; no invented business metrics.</p>
     </section>
 
-    <!-- 6. SKILLS -->
-    <section class="wrap" id="skills">
+    <!-- SKILLS -->
+    <section class="wrap" id="skills" aria-labelledby="skills-h">
       <p class="eyebrow reveal">Skills &amp; tools</p>
-      <h2 class="reveal">Toolbox</h2>
+      <h2 id="skills-h" class="reveal">Toolbox</h2>
       <div class="toolcols reveal">
-        <div class="toolcol"><h4>Data</h4><ul class="chips"><li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">SciPy</li><li class="chip">Matplotlib</li><li class="chip">Seaborn</li><li class="chip">Plotly</li></ul></div>
-        <div class="toolcol"><h4>Software</h4><ul class="chips"><li class="chip">Python</li><li class="chip">Git/GitHub</li><li class="chip">Linux</li><li class="chip">C/C++</li><li class="chip">Docker (basic)</li></ul></div>
-        <div class="toolcol"><h4>Databases</h4><ul class="chips"><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">SQL (basic)</li></ul></div>
-        <div class="toolcol"><h4>Research</h4><ul class="chips"><li class="chip">Statistical modelling</li><li class="chip">Bayesian</li><li class="chip">Time-series</li><li class="chip">XSPEC</li><li class="chip">ROOT</li></ul></div>
-        <div class="toolcol"><h4>AI/ML</h4><ul class="chips"><li class="chip">scikit-learn</li><li class="chip">Regression</li><li class="chip">Classification</li><li class="chip">Clustering</li></ul></div>
+        <div class="toolcol"><h3>Scientific Python</h3><ul class="chips"><li class="chip">NumPy</li><li class="chip">SciPy</li><li class="chip">Pandas</li><li class="chip">Matplotlib</li><li class="chip">Seaborn</li></ul></div>
+        <div class="toolcol"><h3>Software practice</h3><ul class="chips"><li class="chip">Python</li><li class="chip">Git / GitHub</li><li class="chip">Linux</li><li class="chip">C/C++</li><li class="chip">Docker (basic)</li></ul></div>
+        <div class="toolcol"><h3>Data</h3><ul class="chips"><li class="chip">SQL</li><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Data validation</li></ul></div>
+        <div class="toolcol"><h3>Statistics &amp; ML</h3><ul class="chips"><li class="chip">Bayesian / MCMC</li><li class="chip">Statistical modelling</li><li class="chip">Time series</li><li class="chip">scikit-learn</li><li class="chip">Regression</li><li class="chip">Clustering</li></ul></div>
+        <div class="toolcol"><h3>Domain</h3><ul class="chips"><li class="chip">XSPEC</li><li class="chip">CIAO / Sherpa</li><li class="chip">HEASoft</li><li class="chip">ROOT</li></ul></div>
       </div>
-      <p class="muted reveal" style="margin-top:1rem">Levels reflect my CV: Python intermediate; SQL/R/Tableau/Docker basic; ML foundations via scikit-learn and statistical modelling.</p>
+      <p class="muted reveal" style="margin-top:1.2rem">Levels reflect the CV: Python intermediate; SQL, R, Tableau and
+        Docker basic; machine-learning foundations via scikit-learn and statistical modelling.</p>
     </section>
 
-    <!-- 7. CAREER FOCUS + CONTACT -->
+    <!-- CTA -->
     <section class="wrap" id="cv">
-      <div class="card reveal" style="text-align:center;padding:2.6rem">
-        <p class="eyebrow" style="justify-content:center">Career focus &amp; availability</p>
-        <h2>Let's talk data, software, and AI</h2>
-        <ul class="chips" style="justify-content:center;margin:1rem 0 1.4rem">
-          <li class="chip">Data Analyst</li><li class="chip">Research Data Scientist</li><li class="chip">Scientific Software / Research Engineer</li>
-          <li class="chip">AI / Data Associate</li><li class="chip">Technical R&amp;D / Analytics</li>
-        </ul>
-        <div class="hero__cta" style="justify-content:center">
+      <div class="cta reveal">
+        <p class="eyebrow" style="justify-content:center">Availability</p>
+        <h2>Research first — and open to technical collaboration</h2>
+        <p>My priority is a postdoctoral position in X-ray astronomy. I am also open to research-software,
+          scientific-computing and data-analysis collaborations where the physics and the code meet.</p>
+        <div class="hero__cta">
           <a class="btn btn--primary" href="mailto:karthikedu77@gmail.com">Email me</a>
-          <a class="btn btn--ghost" href="assets/Karthik_Balasubramaniam_CV.pdf" download title="Academic CV (PDF)">Download CV (PDF)</a>
+          <a class="btn btn--ghost" href="assets/Karthik_Balasubramaniam_CV.pdf" download>Download CV (PDF)</a>
+          <a class="btn btn--ghost" href="index.html#research">See the research</a>
         </div>
-        <p class="muted" style="margin-top:1rem">Academic CV — updated August 2026. Email is included; phone number redacted for the web.</p>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="wrap footer__grid">
-      <div><strong>Dr. Karthik Balasubramaniam</strong><p class="muted">Research data scientist · scientific software · solar-AI optics</p></div>
-      <nav aria-label="Contact links">
+      <div>
+        <strong>Dr. Karthik Balasubramaniam</strong>
+        <p class="muted" style="margin:.2rem 0 0">X-ray astrophysics · scientific computing</p>
+      </div>
+      <nav aria-label="Contact and profile links">
         <a href="mailto:karthikedu77@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/kab2421" target="_blank" rel="me noopener">LinkedIn</a>
         <a href="https://orcid.org/0000-0003-0095-9302" target="_blank" rel="me noopener">ORCID</a>
+        <a href="https://www.linkedin.com/in/kab2421" target="_blank" rel="me noopener">LinkedIn</a>
         <a href="https://github.com/karthikab7" target="_blank" rel="me noopener">GitHub</a>
       </nav>
     </div>
-    <div class="wrap"><p class="muted">© <span id="year">2026</span> Karthik Balasubramaniam · <a href="astro.html">Looking for the research side? →</a></p></div>
+    <div class="wrap">
+      <p class="muted">© <span id="year">2026</span> Karthik Balasubramaniam ·
+        <a href="index.html">Back to the research site →</a></p>
+    </div>
   </footer>
+
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,47 +1,63 @@
 # karthikab7.github.io
 
-Personal website of **Dr. Karthik Balasubramaniam** — a static, dependency-free site with two career paths:
+Personal academic website of **Karthik Balasubramaniam** — X-ray astrophysicist
+(black-hole accretion, AGN, jet–accretion coupling; Chandra / XMM-Newton / NuSTAR).
 
-- `index.html` — landing page (choose a direction)
-- `astro.html` — astrophysics / research (postdocs, observatories, collaborations)
-- `data.html` — data science / AI / scientific software / technical R&D
-- `404.html` — custom not-found page
+Static, dependency-free, no build step. Plain HTML + modern CSS + one small vanilla-JS file.
 
-## Tech
-Plain HTML + modern CSS + a small vanilla-JS file. No frameworks, no trackers, no build step.
-Visuals are CSS/Canvas/SVG generated. Accessible (skip links, focus styles, reduced-motion support),
-responsive, SEO-friendly (Open Graph, JSON-LD, `robots.txt`, `sitemap.xml`).
+## Pages
+
+| File | Purpose |
+|---|---|
+| `index.html` | The site. Hero, research areas, featured projects, current work, publications, toolkit, career timeline, about, CV/collaboration, contact. |
+| `data.html` | Secondary page: the computational side, applied roles held between research posts, granted patents. Deliberately subordinate to the research. |
+| `astro.html` | **Redirect stub.** Its content moved into `index.html`; the URL is kept so existing inbound links and citations do not break. |
+| `404.html` | Custom not-found page. |
+| `AUDIT.md` | Pre-redesign audit: what was kept, what was corrected, and why. |
 
 ## Local preview
+
 ```bash
 cd karthikab7.github.io
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+No build, no install, no dependencies. What you see locally is what GitHub Pages serves.
+
+## Deploy
+
+GitHub Pages serves the default branch at the repository root. Push to `main`:
+
+```bash
+git add -A && git commit -m "..." && git push
+```
+
 ## Structure
+
 ```
-index.html  astro.html  data.html  404.html
-README.md  CREDITS.md  robots.txt  sitemap.xml
+index.html  data.html  astro.html  404.html
+README.md  AUDIT.md  CREDITS.md  robots.txt  sitemap.xml
 assets/
-  css/styles.css
-  js/main.js
-  img/{astro,data,solar,icons}/   (original SVG art + one public patent figure)
-  docs/   (CV PDF — only a public, contact-redacted version)
+  css/styles.css              design system (tokens, components)
+  js/main.js                  nav, scroll progress, reveal, scrollspy
+  Karthik_Balasubramaniam_CV.pdf
+  img/astro/                  original SVG art (Cen A-inspired hero, disc, jet)
+  img/icons/                  favicon.svg, og.svg, og.png
+  img/solar/                  light-guide diagram + one public patent figure
 ```
 
-## Visual design
-Layered cosmic background, glass panels, glowing accents, scroll-progress bar, section reveals, an
-accessible interactive "research constellation" (astro), and a data-to-insight flow (data). All motion
-respects `prefers-reduced-motion`. Imagery is original SVG/CSS plus one public-record patent figure —
-see `CREDITS.md`.
+## Content rules for future edits
 
-## Content provenance
-All factual content (education, research, publications, experience, patents, skills) is drawn from the
-author's own CV and an INSPIRE publication export. Publication DOIs marked `[Add DOI]` in the source are
-pending verification against ORCID. See `CREDITS.md` for imagery/licensing.
+* **Never invent** publications, dates, affiliations, metrics or results.
+* Publication author strings must reflect the real author position — the canonical list is
+  [ORCID 0000-0003-0095-9302](https://orcid.org/0000-0003-0095-9302).
+* Unpublished work is labelled *In preparation*, *Proposal* or *Collaboration*, never as a result.
+* No third-party imagery unless it is public domain or properly licensed, recorded in `CREDITS.md`.
+* Do not link the `xray-astronomy-rebuild` repository publicly — it is private and 404s for visitors.
 
-## Notes
-- The "Download CV" button is intentionally disabled until a public, phone/contact-redacted CV PDF is added
-  to `assets/docs/`.
-- Canonical publication list: https://orcid.org/0000-0003-0095-9302
+## Accessibility & performance
+
+Semantic HTML, skip link, visible focus states, ARIA on the nav toggle, alt text on every
+meaningful image, `prefers-reduced-motion` honoured throughout, lazy-loaded below-the-fold
+raster image. No frameworks, no trackers, no cookies. The only external request is Google Fonts.
